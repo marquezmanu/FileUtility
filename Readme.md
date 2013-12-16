@@ -11,15 +11,18 @@ Basically, it allows to address file upload features transparently to developers
 
 ## Implementation
 
-1. Create an instance of File Utility: 'var fileupload = new fileUtility()'
+1. Create an instance of File Utility: 
+	`var fileupload = new fileUtility()`
 
-2. Setup the options that follow your file uplaod needs: 
-	var options = {url: 'server.php',
-					buttonText: 'Browse',
-				    ...}
+2. Setup the options that follow your file uplaod needs:
+
+	`var options = {url: 'server.php',
+			buttonText: 'Browse',
+			...}`
 
 3. Initialize fileUtility using an input type file and the options:
-	fileupload.init($(input[type=file]), options)
+
+	`fileupload.init($(input[type=file]), options)`
 
 4. Upload files!
 
