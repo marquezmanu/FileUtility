@@ -1,38 +1,33 @@
 # Globant File Utility
 
----
-
 ## Author
 
 - Manuel Marquez **(Maintainer)**
-
----
 
 ## Introduction
 
 The File Utility is in charge to upload files. This proxy the [uploadify](www.uploadify.com) library and use, as reference, the api of the [uploadifive](http://www.uploadify.com/documentation/), but with some differences that it will be explained below.
 Basically, it allows to address file upload features transparently to developers, interfacing differents libraries/tools.
 
----
-
 ## Implementation
 
 1. Create an instance of File Utility: 'var fileupload = new fileUtility()'
-2. Setup the options that follow your file uplaod needs: 'var options = {url: 'server.php',
-															 			 buttonText: 'Browse',
-															 			 ...}'
-3. Initialize fileUtility using an input type file and the options : 
-	'fileupload.init($(input[type=file]), options)'
-4. Upload files!
 
----
+2. Setup the options that follow your file uplaod needs: 
+	var options = {url: 'server.php',
+					buttonText: 'Browse',
+				    ...}
+
+3. Initialize fileUtility using an input type file and the options:
+	fileupload.init($(input[type=file]), options)
+
+4. Upload files!
 
 ## Configuration
 
 - Setup the path of the uploadify.swf, in the contructor of the module fileUploadify.
 - Use the jquery.uploadifive.js, jquery.uploadify.js and uploadify.swf attached in this repo.
 
----
 
 ## Features
 
@@ -51,8 +46,6 @@ Coming soon...
 - File upload stop 
 - File upload debug
 - Multiple file uploads
-
----
 
 ## Options
 
@@ -207,8 +200,6 @@ The maximum number of files that may be uploaded.  Set to 0 to remove any limit.
 
 The width of the browse button in pixels.
 
----
-
 ## Events
 
 ### onAdd
@@ -222,6 +213,8 @@ Triggered when a new item is added to the queue.  This is triggered whether or n
 
 - **file**: The file object being added to the queue.
 
+---
+
 ### onCancel
 
 - **Input Type**: function
@@ -232,6 +225,8 @@ Triggered when a file is cancelled / removed from the queue.
 #### Arguments
 
 - **file**: The file object being cancelled.
+
+---
 
 ### onCheck
 
@@ -245,6 +240,8 @@ Triggered after a file is checked against existing files in the destination fold
 - **file**: The file object being checked.
 - **fileExists**: (true or false) Whether or not the file name exists in the destination folder.
 
+---
+
 ### onClearQueue
 
 - **Input Type**: function
@@ -254,6 +251,8 @@ Triggered when the queue is cleared using the ‘clearQueue‘ method.
 #### Arguments
 
 - **queue**: The jQuerified DOM element of the file queue.
+
+---
 
 ### onDestroy
 
@@ -265,6 +264,8 @@ Triggered when the UploadiFive instance is destroyed using the destroy method.
 
 No arguments are passed to this event.
 
+---
+
 ### onDrop
 
 - **Input Type**: function
@@ -275,6 +276,8 @@ Triggered when a file is dropped onto the file queue.
 
 - **file**: An object containing the file objects dropped onto the file queue.
 - **fileDropCount**: The number of files dropped onto the queue.
+
+---
 
 ### onError
 
@@ -288,6 +291,8 @@ Triggered when an error occurs either adding a file to the queue or uploading a 
 - **errorType**: One of several types of error codes including: QUEUE_LIMIT_EXCEEDED, UPLOAD_LIMIT_EXCEEDED, FILE_SIZE_LIMIT_EXCEEDED, FORBIDDEN_FILE_TYPE, and 404_FILE_NOT_FOUND.
 - **file / filesToUpload**: Depending on the error code, the second argument will hold either a null value, the file object being uploaded (FILE_SIZE_LIMIT_EXCEEDED, FORBIDDEN_FILE_TYPE, 404_FILE_NOT_FOUND) or a collection of files that need to be uploaded (UPLOAD_LIMIT_EXCEEDED).
 
+---
+
 ### onInit
 
 - **Input Type**: function
@@ -297,6 +302,8 @@ Triggered at the end of the initialization phase.
 #### Arguments
 
 No arguments are passed to this event.
+
+---
 
 ### onProgress
 
@@ -311,6 +318,8 @@ Triggered every time a file upload has a progress update.
 - **bytesUploaded**: The number of bytes of the file that have been uploaded.
 - **bytesTotal**: The total number of bytes of the file.
 
+---
+
 ### onQueueComplete **( not yet implemented)**
 
 - **Input Type**: function
@@ -321,6 +330,8 @@ Triggered when all files in the queue have completed uploading.
 
 - **(not yet implemented)**
 
+---
+
 ### onSelect **(not yet implemented)**
 
 - **Input Type**: function
@@ -330,6 +341,8 @@ Triggered once for every file that is selected whether it returns and error or n
 #### Arguments
 
 - **(not yet implemented)**
+
+---
 
 ### onUploadComplete
 
@@ -343,6 +356,8 @@ Triggered once for each file upload that completes.
 - **file**: The file object that was uploaded.
 - **data**: The data returned from the server-side upload script.
 
+---
+
 ### onUploadFile
 
 - **Input Type**: function
@@ -353,8 +368,6 @@ Triggered once for every file upload that starts.
 #### Arguments
 
 - **file**: The file object being uploaded. 
-
----
 
 ## Methods
 
@@ -367,6 +380,8 @@ Initialize File Utility
 - **input**: The input type file. 
 - **options**: The object containing all the options a events.
 
+---
+
 ### upload
 
 Upload the last file selected
@@ -374,6 +389,8 @@ Upload the last file selected
 #### Arguments
 
 No arguments are passed to this method.
+
+---
 
 ### cancel
 
@@ -383,6 +400,8 @@ Cancel the selected file or all the files (if pass non arguments).
 
 - **fileId**: File object to be canceled, if there are not arguments this will cancel all the files in the queue.
 
+---
+
 ### settings
 
 Set an option with some data during runtime
@@ -391,8 +410,6 @@ Set an option with some data during runtime
 
 - **option**: Option to be set.
 - **data**: Data that will configure the option.
-
----
 
 ## Styling
 
@@ -405,7 +422,7 @@ For example:
 		<input id="fileupload" type="file"/>
 	<span>
 
-In this example I used bootrsap classes
+In this example I used bootstrap classes
 
 ### Queue 
 
