@@ -1,4 +1,4 @@
-# Globant File Utility
+# File Utility
 
 ## Author
 
