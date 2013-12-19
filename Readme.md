@@ -58,7 +58,8 @@ Coming soon...
 - File upload stop 
 - File upload debug
 - Multiple file uploads
-
+- 
+## 			API
 ## Options
 
 ### url 
@@ -380,6 +381,8 @@ Triggered once for every file upload that starts.
 #### Arguments
 
 - **file**: The file object being uploaded. 
+
+---
 
 ## Methods
 
