@@ -455,8 +455,9 @@ If you don't want to see the queue that is a default behavior of this library pu
 
 ## Notes
 
-Yet FileUtility it is not finished, so you can contribute in this project sending a pull request. 
+Yet FileUtility it is not finished, so you can contribute in this project sending a pull request or raise an issue.
 
+This is licenced under the MIT licence. We welcome comments, feedback and suggestions. 
 Enjoy!
 
 
