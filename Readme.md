@@ -39,9 +39,7 @@ Note: you can dowload from this repo the FLASH version (jquery.uploadify.js and 
 
 ## Configuration
 
-- Setup the path of the uploadify.swf, in the contructor of the module fileUploadify.
-- Use the jquery.uploadifive.js, jquery.uploadify.js and uploadify.swf attached in this repo.
-
+- Setup the path of the uploadify.swf file, in the contructor of the module fileUploadify.
 
 ## Features
 
