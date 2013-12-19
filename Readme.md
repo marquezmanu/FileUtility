@@ -58,8 +58,8 @@ Coming soon...
 - File upload stop 
 - File upload debug
 - Multiple file uploads
-- 
-## 			API
+
+## API
 ## Options
 
 ### url 
