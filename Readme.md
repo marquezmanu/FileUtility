@@ -3,6 +3,7 @@
 ## Author
 
 - Manuel Marquez **(Maintainer)**
+- Dario Cabrera **(Colaborator)**
 
 ## Introduction
 
