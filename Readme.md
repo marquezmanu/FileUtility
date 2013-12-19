@@ -10,7 +10,7 @@
 The File Utility is in charge to upload files. This proxy the [uploadify](www.uploadify.com) library and use, as reference, the api of the [uploadifive](http://www.uploadify.com/documentation/), but with some differences that it will be explained below.
 Basically, it allows to address file upload features transparently to developers, interfacing differents libraries/tools.
 
-## Dependecies
+## Dependencies
 
 To have a complete user experience you should have jquery.uploadifive.js, jquery.uploadify.js and uploadify.swf. You can get this from the [uploadify website](http://www.uploadify.com/download/). 
 
