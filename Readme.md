@@ -10,6 +10,16 @@
 The File Utility is in charge to upload files. This proxy the [uploadify](www.uploadify.com) library and use, as reference, the api of the [uploadifive](http://www.uploadify.com/documentation/), but with some differences that it will be explained below.
 Basically, it allows to address file upload features transparently to developers, interfacing differents libraries/tools.
 
+## Dependecies
+
+To have a complete user experience you should have jquery.uploadifive.js, jquery.uploadify.js and uploadify.swf. You can get this from the [uploadify website](http://www.uploadify.com/download/). 
+
+The HTML5 version is the paid version, but the FLASH version is free and has the MIT License.
+
+If you can not afford the paid version you can use it only with the FLASH version but you will lose all the features of the HTML5 version. This is up to you.
+
+Note: you can dowload from this repo the FLASH version (jquery.uploadify.js and uploadify.swf).
+
 ## Implementation
 
 1. Create an instance of File Utility: 
@@ -414,6 +424,8 @@ Set an option with some data during runtime
 
 - **option**: Option to be set.
 - **data**: Data that will configure the option.
+
+---
 
 ## Styling
 
