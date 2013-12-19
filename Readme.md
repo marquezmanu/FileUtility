@@ -434,20 +434,22 @@ Set an option with some data during runtime
 
 For a correct cross browsing styling, wrap the input type file between span and put the css on the span.
 For example:
-
+```html
 	<span class="btn btn-success">
 		<input id="fileupload" type="file"/>
 	<span>
+```
 
 In this example I used bootstrap classes
 
 ### Queue 
 
 If you don't want to see the queue that is a default behavior of this library put this in your css:
-
+```css
 	.uploadifive-queue, .uploadify-queue {
 		display: none
 	}
+```
 
 ---
 
