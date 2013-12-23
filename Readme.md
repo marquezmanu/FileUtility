@@ -4,6 +4,7 @@
 
 - Manuel Marquez **(Maintainer)**
 - Dario Cabrera **(Colaborator)**
+- Jose Macchi **(Colaborator)**
 
 ## Introduction
 
