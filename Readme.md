@@ -23,13 +23,13 @@ Note: you can dowload from this repo the FLASH version (jquery.uploadify.js and 
 
 ## How to use
 
-1. Create an instance of File Utility:
+Create an instance of File Utility:
 
 ```javascript
 	var fileUpload = new fileUtility()
 ```
 
-2. Setup the options that follow your file uplaod needs:
+Setup the options that follow your file upload needs:
 
 ```javascript
 var options = {
@@ -56,19 +56,20 @@ var options = {
 };
 ```
 
-3. Initialize fileUtility using an input type file and the options:
+Initialize fileUtility using an input type file and the options:
 
 ```javascript
+	// the first arguments always has to be a input type file
 	fileUpload.init($(input[type=file]), options);
 ```
 
-4. Use methods
+Use methods
 
 ```javascript
 	fileUpload.upload();
 ```
 
-5. Upload files!
+Upload files!
 
 ## Configuration
 
