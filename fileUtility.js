@@ -1,5 +1,7 @@
 /**
  * Proxy uploadifive
+ * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
+ * @author Manuel Marquez
  */
 (function(root, callback) {
   /** Setting up AMD support*/
@@ -26,6 +28,7 @@
       'uploadScript': ''
     };
     this.isHTML5 = true;
+    this.$input = null;
     return this;
   };
   /**
@@ -115,7 +118,7 @@
    */
   fileUploadifive.prototype.settings = function(option, data) {
     this.$input.data('uploadifive').settings[option] = data;
-  }
+  };
   return fileUploadifive;
 });
 
@@ -337,7 +340,6 @@
     } else {
       this.uploader = new uploadify();
     }
-
     return this;
   };
 
