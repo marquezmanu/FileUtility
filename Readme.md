@@ -13,7 +13,7 @@ Basically, it allows to address file upload features transparently to developers
 
 ## Demo
 
-[View demo](http://www.http://fileutility.webege.com/)
+[View demo](http://www.fileutility.webege.com/)
 
 ## Compatibility
 
