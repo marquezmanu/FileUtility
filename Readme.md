@@ -34,6 +34,12 @@ Note: you can dowload from this repo the FLASH version (jquery.uploadify.js and 
 Create an instance of File Utility:
 
 ```javascript
+	var fileUpload = new fileUtility(false)
+```
+
+If you purchase the paid version not pass any arguments in the constructor to enable the HTML5 version:
+
+```javascript
 	var fileUpload = new fileUtility()
 ```
 
