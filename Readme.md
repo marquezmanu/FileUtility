@@ -111,12 +111,13 @@ Coming soon...
 
 The path to the script that will process the uploaded file. 
 
-### auto 
+### buttonClass
 
-- **Input Type**: Boolean
-- **Default Value**: true
+- **Input Type**: String
+- **Default Value**: (Empty String)
+- **Required**: Yes
 
-If set to true, files will automatically upload when added to the queue.
+A class name to add to the Uploader button.
 
 ### buttonText 
 
@@ -124,6 +125,13 @@ If set to true, files will automatically upload when added to the queue.
 - **Default Value**: 'SELECT FILES'
 
 The text to display inside the browse button.  This text is rendered as HTML and may contain tags or HTML entities.
+
+### auto 
+
+- **Input Type**: Boolean
+- **Default Value**: true
+
+If set to true, files will automatically upload when added to the queue.
 
 ### checkScript
 
