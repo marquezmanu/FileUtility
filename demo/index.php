@@ -12,25 +12,27 @@
  	
 	<body>
 		<div id="container">
-			<header>
-				<h1>File Utility Example</h1>
-				A simple demostration of File Utility
-			</header>
-			<div class="buttons">
-				<span class="btn-position">
-					<input type="file" id="fileupload"/>
-				</span>				
-			</div>
-			<div class="wrapper-queue">
-				<span class="queue-clear">Clear Queue</span>
-				<div class="js-queue">
+			<div class="content">
+				<header>
+					<h1>File Utility Example</h1>
+					A simple demostration of File Utility
+				</header>
+				<div class="buttons">
+					<span class="btn-position">
+						<input type="file" id="fileupload"/>
+					</span>				
 				</div>
+				<div class="wrapper-queue">
+					<span class="queue-clear">Clear Queue</span>
+					<div class="js-queue">
+					</div>
+				</div>
+				<div class="progress-bar">
+					<div class="progress-fill"></div>
+				</div>
+				<a href="https://github.com/marquezmanu/FileUtility"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+				<div class="spacer" style="clear: both;"></div>
 			</div>
-			<div class="progress-bar">
-				<div class="progress-fill"></div>
-			</div>
-			<a href="https://github.com/marquezmanu/FileUtility"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
-			<div class="spacer" style="clear: both;"></div>
 		</div>
 		<footer>
 			<div class="footer-container">

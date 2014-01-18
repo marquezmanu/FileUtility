@@ -75,9 +75,10 @@ body
 /**** LAYOUT ****/
 
 #container {
-	margin: 0 auto;
-	width: 960px;
-    height: 95%;
+    position: relative;
+    height: 100%;
+    margin-bottom: -2em;
+    overflow: auto;
 }
 
 /**** HEADER ****/
@@ -101,7 +102,7 @@ header h1 {
 footer {
     position: relative;
     clear: both;
-    height: 5%;
+    height: 2em;
     background: #7696ae;
 }
 
@@ -112,6 +113,10 @@ footer {
 }
 
 /**** CONTENT ****/
+.content {
+    width: 960px;
+    margin: 0 auto;
+}
 .buttons {
     float: left;
     position: relative;
@@ -127,7 +132,6 @@ footer {
 	display: inline-block;
 	background: #9fbb58;
     color: white;
-	/*cursor: pointer;*/
     text-shadow: none;
     font-size: 18px;
     -webkit-transition: background 1s ease;
@@ -160,6 +164,7 @@ footer {
     left: 0;
     width: 100%;
     height: 5px;
+    z-index: 5;
 }
 .progress-fill {
     width: 0;
@@ -171,7 +176,6 @@ footer {
     -o-transition: all 1s ease;
     transition: all 1s ease;
 }
-
 .footer-container {
     position: absolute;
     left: 47%;
