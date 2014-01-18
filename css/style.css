@@ -1,0 +1,160 @@
+/*Reset Common Tags*/
+
+a,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td,img
+{
+    margin:0;
+    padding:0;
+}
+
+header,nav,article,aside,footer,hgroup,section
+{
+    display:block;
+}
+
+/**** GENERAL ****/
+
+a
+{
+    color:#6e8a9e;
+    outline:0;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+a:hover
+{
+    text-decoration:none;
+}
+
+img
+{
+    border:0;
+}
+
+p
+{
+    float:left;
+    width:690px;
+    padding: 0 135px;
+    margin:15px 0;
+}
+
+h1
+{
+    margin:12px 0;
+    font-weight:normal;
+}
+
+h2
+{
+    margin:30px 0 20px 0;
+    font-weight:normal;
+    font-size:40px;
+    color:#7597b0;
+    text-shadow: 0 1px 0 #ebf7ff;
+}
+
+
+body
+{
+    font-family: "HelveticaNeue", "Helvetica Neue", "HelveticaNeueRoman", "HelveticaNeue-Roman", "Helvetica Neue Roman", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-weight:400;
+    font-stretch:normal;
+    background-color: #eef6fa;
+    font-size:14px;
+    line-height:21px;
+    color:#6e8a9e;
+    text-shadow: 0 1px 0 #FFFFFF;
+    text-align:center;
+    padding:0;
+    margin:0;
+}
+/**** LAYOUT ****/
+
+#container {
+	margin: 0 auto;
+	width: 960px;
+}
+
+/**** HEADER ****/
+
+header
+{
+    float: left;
+    width: 100%;
+    height: 200px;
+    color: #7696ae;
+}
+
+header h1 {
+    margin: 60px 0 20px 0;
+    font-size: 76px;
+    line-height: 64px;
+}
+
+/**** UPLOADER QUEUE****/
+
+.uploadifive-queue, .uploadify-queue {
+    display: none
+}
+
+/**** CONTENT ****/
+.buttons {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 35px;
+}
+.btn-position {
+    position: absolute;
+    left: 43%;
+}
+.btn-uploader {
+	display: inline-block;
+	background: #9fbb58;
+    color: white;
+	/*cursor: pointer;*/
+    text-shadow: none;
+    font-size: 18px;
+    -webkit-transition: background 1s ease;
+    -moz-transition: background 1s ease;
+    -ms-transition: background 1s ease;
+    -o-transition: background 1s ease;
+    transition: background 1s ease;
+}
+.btn-uploader:hover {
+    background: #8AA551;
+}
+.wrapper-queue {
+    display: none;
+    clear: both;
+	width: 400px;
+	margin: 0 auto;
+}
+.queue-clear {
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+    vertical-align: super;
+}
+.queue-file {
+	padding: 5px;
+}
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+}
+.progress-fill {
+    width: 0;
+    height: 100%;
+    background: red;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+}
