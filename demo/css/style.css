@@ -11,10 +11,13 @@ header,nav,article,aside,footer,hgroup,section
     display:block;
 }
 
+html, body {
+    height: 100%;
+}
+
 /**** GENERAL ****/
 
-a
-{
+a {
     color:#6e8a9e;
     outline:0;
     text-decoration:none;
@@ -74,6 +77,7 @@ body
 #container {
 	margin: 0 auto;
 	width: 960px;
+    height: 95%;
 }
 
 /**** HEADER ****/
@@ -90,6 +94,15 @@ header h1 {
     margin: 60px 0 20px 0;
     font-size: 76px;
     line-height: 64px;
+}
+
+/**** HEADER ****/
+
+footer {
+    position: relative;
+    clear: both;
+    height: 5%;
+    background: #7696ae;
 }
 
 /**** UPLOADER QUEUE****/
@@ -157,4 +170,10 @@ header h1 {
     -ms-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
+}
+
+.footer-container {
+    position: absolute;
+    left: 47%;
+    top: 20%;
 }
