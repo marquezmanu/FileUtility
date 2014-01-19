@@ -34,7 +34,7 @@
 	</body>
 
 	<script>
- 		<?php $timestamp = time();?>
+ 		// <?php $timestamp = time();?>
 		$(document).ready(function() {
 			// Pass a true boolean to use the flash version in this demo. If you want the HTML5 of uploadifive 
 			// visit http://www.uploadify.com/download/download-uploadifive-standard/ the add the file and pass non-arguments.
@@ -43,10 +43,10 @@
 				'url': 'uploadifive.php',
 				'buttonText': 'Upload',
 				'buttonClass': 'btn-uploader',
-				'formData'     : {
-					'timestamp' : '<?php echo $timestamp;?>',
-					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
-				},
+				// 'formData'     : {
+				// 	'timestamp' : '<?php echo $timestamp;?>',
+				// 	'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+				// },
 				'width': 140,
 				'height': 54,
 				'onUploadComplete': function(file, data, response) {
