@@ -488,15 +488,14 @@ Set an option with some data during runtime
 
 ### Input Styling
 
-For a correct cross browsing styling, wrap the input type file between span and put the css on the span.
+For a correct cross browsing styling, wrap the input type file between span or div or wathere you want an use it to set the position of the button. You have to use the property 'buttonClass' to set multiples or single class of styling and we recomend do not use padding, use the propertys 'width' and 'height'.
 For example:
 ```html
-	<span class="btn btn-success">
+	<span class="btn-position">
 		<input id="fileupload" type="file"/>
 	<span>
 ```
 
-In this example I used bootstrap classes
 
 ### Queue 
 
