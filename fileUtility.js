@@ -1,6 +1,5 @@
 /**
  * Proxy uploadifive
- * @author Manuel Marquez
  */
 (function(root, callback) {
   /** Setting up AMD support*/
@@ -27,7 +26,6 @@
       'uploadScript': ''
     };
     this.isHTML5 = true;
-    this.$input = null;
     return this;
   };
   /**
@@ -72,27 +70,23 @@
     if ($input) {
       this.$input = $input;
       this.$input.uploadifive(this.parseOptions(options));
-      // Fix that add a default pointer
-      this.$input.siblings().css('cursor', 'pointer');
     }
   };
   /**
-   * Upload the last file selected
+   * Upload files
    *
    * @method upload
+   * @param file {Object} File to be uploaded
    */
-  fileUploadifive.prototype.upload = function() {
+  fileUploadifive.prototype.upload = function(file) {
     var self = this;
+
     if (this.$input) {
-      // only upload the last file selected
-      $.each($('.uploadifive-queue-item'), function(index, value) {
-        var $value = $(value);
-        if ($value.is(':last-child')) {
-          return;
-        }
-        self.cancel($value.data('file'));
-      });
-      this.$input.uploadifive('upload');
+      if (file) {
+        this.$input.uploadifive('upload', file);
+      } else {
+        this.$input.uploadifive('upload');
+      }
     }
   };
   /**
@@ -120,8 +114,40 @@
   fileUploadifive.prototype.settings = function(option, data) {
     this.$input.data('uploadifive').settings[option] = data;
   };
+  /**
+   * Get the data of a respective setting
+   *
+   * @method getSetting
+   * @param option {string} Option to get.
+   * @return Data
+   */
+  fileUploadifive.prototype.getSetting = function(option) {
+    return this.$input.data('uploadifive').settings[option];
+  };
+  /**
+   * Get the id of a file
+   *
+   * @method getId
+   * @param file {Object} File.
+   * @return id
+   */
+  fileUploadifive.prototype.getId = function(file) {
+    return file.queueItem[0].id;
+  };
+
+
+  /**
+   * Destroys the instance of Uploadifive and returns the file input to its original state.
+   *
+   * @method destroy
+   */
+  fileUploadifive.prototype.destroy = function() {
+    this.$input.uploadifive('destroy');
+  };
+
   return fileUploadifive;
 });
+
 
 /**
  * Proxy uploadify
@@ -148,9 +174,16 @@
    */
   var fileUploadify = function() {
     this.options = {
-      'swf': 'uploadify.swf',
+      'swf': '/Vendors/Plugins/uploadify.swf',
       'uploader': '',
       'fileTypeExts': ''
+    };
+    this.events = {
+      'onUploadSucces': '',
+      'onUploadProgress': '',
+      'onUploadError': '',
+      'onSelectError': '',
+      'onUploadStart': ''
     };
     this.$input = null;
     this.isHTML5 = false;
@@ -217,7 +250,7 @@
     this.options.overrideEvents = ['onDialogClose'];
 
     this.options.fileTypeExts = this.parseFileType(options.fileType);
-    // onUploadComplete never used in swf, instead use onUploadSuccess
+    // onUploadComplete never used in swf
     this.options.onUploadComplete = null;
     // parse onUploadSuccess
     this.options.onUploadSuccess = options.onUploadComplete;
@@ -253,22 +286,20 @@
     }
   };
   /**
-   * Upload the last file selected
+   * Upload files
    *
    * @method upload
+   * @param file {Object} File to be uploaded
    */
-  fileUploadify.prototype.upload = function() {
+  fileUploadify.prototype.upload = function(file) {
     var self = this;
+
     if (this.$input) {
-      // only upload the last file selected
-      $.each($('.uploadify-queue-item'), function(index, value) {
-        var $value = $(value);
-        if ($value.is(':last-child')) {
-          return;
-        }
-        self.cancel(value.id);
-      });
-      this.$input.uploadify('upload');
+      if (file) {
+        this.$input.uploadify('upload', file.id);
+      } else {
+        this.$input.uploadify('upload', '*');
+      }
     }
   };
   /**
@@ -296,7 +327,37 @@
    */
   fileUploadify.prototype.settings = function(option, data) {
     this.$input.uploadify('settings', option, data);
-  }
+  };
+  /**
+   * Get the data of a respective setting
+   *
+   * @method getSetting
+   * @param option {string} Option to get.
+   * @return Data
+   */
+  fileUploadify.prototype.getSetting = function(option) {
+    return this.$input.uploadify('settings', option);
+  };
+  /**
+   * Get the id of a file
+   *
+   * @method getId
+   * @param file {Object} File.
+   * @return id
+   */
+  fileUploadify.prototype.getId = function(file) {
+    return file.id;
+  };
+
+  /**
+   * Destroys the instance of Uploadify and returns the file input to its original state.
+   *
+   * @method destroy
+   */
+  fileUploadify.prototype.destroy = function() {
+    this.$input.uploadify('destroy');
+  };
+
 
   return fileUploadify;
 });
@@ -327,17 +388,12 @@
    * @class fileUtility
    * @constructor
    */
-  var fileUtility = function(flash) {
-    // If user want the flash version set flash to true
-    if (flash) {
-      this.uploader = new uploadify()
+  var fileUtility = function() {
+    // Check if HTML5 is available
+    if (window.File && window.FileList && window.Blob && (window.FileReader || window.FormData)) {
+      this.uploader = new uploadifive();
     } else {
-      // Check if HTML5 is available
-      if (uploadifive && window.File && window.FileList && window.Blob && (window.FileReader || window.FormData)) {
-        this.uploader = new uploadifive();
-      } else {
-        this.uploader = new uploadify()
-      }
+      this.uploader = new uploadify();
     }
 
     return this;
@@ -356,15 +412,16 @@
       this.uploader.init.apply(this.uploader, arguments);
     },
     /**
-     * Upload the last file selected
+     * Upload
      *
      * @method upload
+     * @param file {Object} File to be uploaded
      */
     upload: function() {
       this.uploader.upload.apply(this.uploader, arguments);
     },
     /**
-     * Cancel the selected file or if none arguments all the files.
+     * Cancel the selected file or all the files.
      *
      * @method cancel
      * @param fileiD {Object} File to be canceled
@@ -381,6 +438,34 @@
      */
     settings: function() {
       this.uploader.settings.apply(this.uploader, arguments);
+    },
+    /**
+     * Get the data of a respective setting
+     *
+     * @method getSetting
+     * @param option {string} Option to get.
+     * @return Data
+     */
+    getSetting: function() {
+      return this.uploader.getSetting.apply(this.uploader, arguments);
+    },
+    /**
+     * Get the id of a file
+     *
+     * @method getId
+     * @param file {Object} File.
+     * @return id
+     */
+    getId: function() {
+      return this.uploader.getId.apply(this.uploader, arguments);
+    },
+    /**
+     * Destroys the instance of FileUtility and returns the file input to its original state.
+     *
+     * @method destroy
+     */
+    destroy: function() {
+      this.uploader.destroy.apply(this.uploader, arguments);
     }
   };
 
